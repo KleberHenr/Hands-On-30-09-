@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        ========== STREAMING ==========
+        System.out.println("1 - Netflix");
+        System.out.println("2 - Disney+");
+        System.out.println("3 - Prime Vídeo");
+        System.out.println("4 - Spotify");
+        System.out.println("5 - Sair");
+
+        System.out.print("Escolha uma opção: ");
+        int opcao = entrada.nextInt();
+
+        switch (opcao) {
+
+            case 1:
+                System.out.println("Você escolheu a Netflix.");
+                System.out.println("Prepare a pipoca!");
+                break;
+
+            case 2:
+                System.out.println("Você escolheu a Disney+.");
+                System.out.println("Prepare o sofá!");
+                break;
+
+            case 3:
+                System.out.println("Você escolheu o Vídeo Prime.");
+                System.out.println("Hora de assistir!");
+                break;
+
+            case 4:
+                System.out.println("Você escolheu o Spotify.");
+                System.out.println("Aumente o volume!");
+                break;
+
+            case 5:
+                System.out.println("Saindo...");
+                break;
+
+            default:
+                System.out.println("Opção inválida.");
+        }
+
+        entrada.close();
+    }
+}
