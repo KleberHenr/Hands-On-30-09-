@@ -1,0 +1,61 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int opcao;
+        double total = 0;
+
+        do {
+            System.out.println(" ========= LANCHONETE =========");
+            System.out.println("1 - Pizza         - R$ 30,00");
+            System.out.println("2 - Hambúrguer    - R$ 20,00");
+            System.out.println("3 - Batata        - R$ 12,00");
+            System.out.println("4 - Refrigerante  - R$ 8,00");
+            System.out.println("0 - Finalizar");
+            System.out.print("O que você deseja comprar? ");
+            opcao = entrada.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    total += 30;
+                    System.out.println("Pizza adicionada!");
+                    break;
+                case 2:
+                    total += 20;
+                    System.out.println("Hambúrguer adicionado!");
+                    break;
+                case 3:
+                    total += 12;
+                    System.out.println("Batata adicionada!");
+                    break;
+                case 4:
+                    total += 8;
+                    System.out.println("Refrigerante adicionado!");
+                    break;
+                case 0:
+                    System.out.println("Compra finalizada!");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        } while (opcao != 0);
+
+        double desconto = 0;
+        if (total >= 50 && total < 100) {
+            desconto = 0.05;
+        } else if (total >= 100) {
+            System.out.println("Você é estudante?");
+            System.out.println("1 - Sim");
+            System.out.println("2 - Não");
+            int estudante = entrada.nextInt();
+            desconto = estudante == 1 ? 0.15 : 0.10;
+        }
+
+        double valorDesconto = total * desconto;
+        double valorFinal = total - valorDesconto;
+        System.out.println("Valor total: R$ " + total);
+        System.out.println("Desconto aplicado: R$ " + valorDesconto);
+        System.out.println("Valor final a pagar: R$ " + valorFinal);
+        entrada.close();
+    }
+}
