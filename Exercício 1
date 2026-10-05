@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int idade;
+        double horas;
+
+        System.out.print("Digite a idade: ");
+        idade = entrada.nextInt();
+
+        System.out.print("Digite as horas por semana: ");
+        horas = entrada.nextDouble();
+
+        if (idade < 12) {
+            System.out.println("Jarro Mirim");
+        } 
+        else if (idade < 18) {
+
+            if (horas <= 10) {
+                System.out.println("Corredor Casual");
+            } 
+            else {
+                System.out.println("Arremessador frequente");
+            }
+
+        } 
+        else {
+
+            if (horas <= 5) {
+                System.out.println("Corredor Casual");
+            } 
+            else if (horas <= 15) {
+                System.out.println("Jogador Arremessador");
+            } 
+            else {
+                System.out.println("Jogador hardcore");
+            }
+        }
+
+        entrada.close();
+    }
+}
